@@ -2,8 +2,8 @@
 {
     internal class Program
     {
-        const int NUM_OF_NUMS = 15;
-        const int NUM_OF_RESULTS = 4;
+        const int ARRAY_SIZE = 15; // Size of Array, counts from 1
+        const int NUM_OF_RESULTS = 4; // Number of Results
         static void Main(string[] args)
         {
             int[] result = new int[NUM_OF_RESULTS];
@@ -19,7 +19,7 @@
             int i = 0;
             while (i < NUM_OF_RESULTS)
             {
-                int choose = rnd.Next(1, NUM_OF_NUMS + 1);
+                int choose = rnd.Next(1, ARRAY_SIZE + 1);
                 bool matched = CheckMatched(result, choose);
                 if (!matched)
                 {
@@ -47,12 +47,12 @@
                     return true;
                 }
             }
-            
             return false;
         }
 
         static void PrintResults(int[] result)
         {
+            Console.WriteLine($"Choosing {NUM_OF_RESULTS} from 1 to {ARRAY_SIZE}");
             for (int i = 0; i < result.Length; i++)
             {
                 Console.WriteLine(result[i]);
